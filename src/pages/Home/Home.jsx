@@ -13,6 +13,8 @@ function Home() {
     { name: "Quick & Easy", image: "quick-easy.jpg", link: "/recipes" }
   ]
 
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
     <>
       {/* Hero Section */}
@@ -26,21 +28,21 @@ function Home() {
 
           <div className="hero-images">
             <Link to="/recipe/1" className="hero-img">
-              <img src="/images/hero-salad-bowl.jpg" alt="Fresh Salad Bowl" />
+              <img src={`${baseUrl}images/hero-salad-bowl.jpg`} alt="Fresh Salad Bowl" />
               <div className="hero-overlay">
                 <span>Fresh Salad Bowl</span>
               </div>
             </Link>
 
             <Link to="/recipes" className="hero-img">
-              <img src="/images/hero-pizza.jpg" alt="Fresh Pizza" />
+              <img src={`${baseUrl}images/hero-pizza.jpg`} alt="Fresh Pizza" />
               <div className="hero-overlay">
                 <span>Fresh Pizza</span>
               </div>
             </Link>
 
             <Link to="/recipes" className="hero-img">
-              <img src="/images/hero-eggs-toast.jpg" alt="Eggs and Toast" />
+              <img src={`${baseUrl}images/hero-eggs-toast.jpg`} alt="Eggs and Toast" />
               <div className="hero-overlay">
                 <span>Eggs & Toast</span>
               </div>
@@ -61,7 +63,7 @@ function Home() {
           <div className="categories-grid">
             {homeCategories.map((category, index) => (
               <Link to={category.link} className="category-card" key={index}>
-                <img src={`/images/${category.image}`} alt={category.name} />
+                <img src={`${baseUrl}images/${category.image}`} alt={category.name} />
                 <div className="card-overlay">
                   <h3>{category.name}</h3>
                 </div>

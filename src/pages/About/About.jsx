@@ -4,6 +4,8 @@ import MissionCard from '../../components/MissionCard/MissionCard'
 import './About.css'
 
 function About() {
+  const baseUrl = import.meta.env.BASE_URL
+
   const breadcrumbItems = [
     { label: 'Home', link: '/' },
     { label: 'About' }
@@ -77,7 +79,7 @@ function About() {
             </div>
 
             <div className="about-img">
-              <img src="/images/about-cooking.jpg" alt="Cooking in kitchen" />
+              <img src={`${baseUrl}images/about-cooking.jpg`} alt="Cooking in kitchen" />
             </div>
           </div>
         </div>

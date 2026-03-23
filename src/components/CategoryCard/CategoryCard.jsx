@@ -7,7 +7,7 @@ function CategoryCard({ category, variant = 'default' }) {
       to="/recipes" 
       className={`category-card ${variant === 'page' ? 'cat-page-card' : ''}`}
     >
-      <img src={`/images/${category.image}`} alt={category.name} />
+      <img src={`${import.meta.env.BASE_URL}images/${category.image}`} alt={category.name} />
       <div className={variant === 'page' ? 'cat-label' : 'card-overlay'}>
         <h3>{category.name}</h3>
       </div>

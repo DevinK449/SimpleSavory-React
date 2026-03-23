@@ -6,6 +6,7 @@ import './RecipeDetail.css'
 function RecipeDetail() {
   const { id } = useParams()
   const recipe = recipes.find(r => r.id === parseInt(id))
+  const baseUrl = import.meta.env.BASE_URL
 
   if (!recipe) {
     return (
@@ -35,7 +36,7 @@ function RecipeDetail() {
         <div className="container">
           <div className="recipe-detail-header">
             <div className="recipe-detail-img">
-              <img src={`/images/${recipe.image}`} alt={recipe.name} />
+              <img src={`${baseUrl}images/${recipe.image}`} alt={recipe.name} />
             </div>
             <div className="recipe-detail-info">
               <h1>{recipe.name}</h1>
